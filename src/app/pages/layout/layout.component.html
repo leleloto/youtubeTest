@@ -1,0 +1,52 @@
+<div class="w-full h-full p-6">
+  <!-- 제목 -->
+  <div
+    class="flex gap-2 justify-center items-center cursor-pointer"
+    routerLink="/"
+  >
+    <img src="assets/icons/youtube.svg" />
+    <div class="text-black text-xl font-extrabold">
+      {{ maintitle | uppercase }}
+    </div>
+  </div>
+  <!-- 제목 -->
+  <div class="bg-[#E7E7E7] border border-1 mt-6"></div>
+  <!--카테고리 -->
+  <div class="flex justify-between items-center">
+    <div class="flex gap-3 mt-3 items-center">
+      <app-category
+        (click)="currentCategory = '전체'"
+        [isSelected]="currentCategory === '전체'"
+        name="전체"
+      ></app-category>
+      <app-category
+        (click)="currentCategory = 'HTML'"
+        [isSelected]="currentCategory === 'HTML'"
+        name="HTML"
+      ></app-category>
+      <app-category
+        (click)="currentCategory = 'TailwindCSS'"
+        [isSelected]="currentCategory === 'TailwindCSS'"
+        name="TailwindCSS"
+      ></app-category>
+      <app-category
+        (click)="currentCategory = 'JavaScript'"
+        [isSelected]="currentCategory === 'JavaScript'"
+        name="JavaScript"
+      ></app-category>
+      <app-category
+        (click)="currentCategory = 'React'"
+        [isSelected]="currentCategory === 'React'"
+        name="React"
+      ></app-category>
+      <app-category
+        (click)="currentCategory = 'Angular'"
+        [isSelected]="currentCategory === 'Angular'"
+        name="Angular"
+      ></app-category>
+    </div>
+  </div>
+  <!-- 카테고리 -->
+  <div class="bg-[#E7E7E7] border border-0.5 mt-3"></div>
+  <router-outlet> </router-outlet>
+</div>
